@@ -1,4 +1,4 @@
-import  recepiec  from "./recepiec.json"
+import  recepiec  from "./recepiec"
 import { Recipe } from "./Recipe/Recipe";
 
 export function App () {
