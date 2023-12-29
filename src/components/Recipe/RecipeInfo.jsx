@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
 import { Recipe } from ".//Recipe.jsx"
+import { Difficulty, Item, TitleH2, Text } from './Recipe.styled.jsx';
 
 export function RecipeInfo({name, time, serving, calories, img, difficulty, iconTime: IconTime, iconCalories: IconCalories, iconPie: IconPie}) {
     return(
-      <li>
+      <Item>
         <img width="300" src={img} alt={name} />
-        <h2>Назва блюда: {name}</h2>
-        <p><IconPie />Кількість порцій: {serving}</p>
-        <p><IconTime /> Час приготування: {time} хв</p>
-        <p><IconCalories />Кількість калорій: {calories} ккал</p>
-        <p>Складність приготування: {difficulty}</p>
-      </li>
+        <TitleH2>Назва блюда: {name}</TitleH2>
+        <Text><IconPie />Кількість порцій: {serving}</Text>
+        <Text><IconTime /> Час приготування: {time} хв</Text>
+        <Text><IconCalories />Кількість калорій: {calories} ккал</Text>
+        <Difficulty difficulty={difficulty}>{difficulty}</Difficulty>
+      </Item>
     )
 }
 
@@ -19,6 +20,6 @@ RecipeInfo.propTypes = {
 	time: PropTypes.string,
 	servings: PropTypes.number,
 	calories: PropTypes.number,
-	difficulty: PropTypes.number,
+	difficulty: PropTypes.string,
 	image: PropTypes.string
 }
